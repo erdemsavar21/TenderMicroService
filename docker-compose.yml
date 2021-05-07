@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+ sourcingdb:
+    image: mongo
+
+ rabbitmq:
+    image: rabbitmq:3-management
+
+ sourcingsqldb:
+    image: mcr.microsoft.com/mssql/server
+
+ tender.products:
+    image: ${DOCKER_REGISTRY-}tenderproducts
+    build:
+      context: .
+      dockerfile: Tender.Products/Dockerfile
+
+ tender.tendering:
+    image: ${DOCKER_REGISTRY-}tendertendering
+    build:
+      context: .
+      dockerfile: Tender.Tendering/Dockerfile
+
+ tender.order:
+    image: ${DOCKER_REGISTRY-}tenderorder
+    build:
+      context: .
+      dockerfile: Tender.Order/Dockerfile
