@@ -38,6 +38,10 @@ namespace Tender.Products.Controllers
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Product>> GetProduct(string id)
         {
+            if (id==null)
+            {
+                return NotFound();
+            }
             var product = await _productRepository.GetProduct(id);
             if (product == null)
             {
