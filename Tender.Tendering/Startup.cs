@@ -71,7 +71,7 @@ namespace Tender.Tendering
 
                 if (!string.IsNullOrWhiteSpace(Configuration["EventBus:Password"]))
                 {
-                    factory.UserName = Configuration["EventBus:Password"];
+                    factory.Password = Configuration["EventBus:Password"];
                 }
 
                 var retryCount = 5;
