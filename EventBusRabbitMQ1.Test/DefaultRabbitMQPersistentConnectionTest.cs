@@ -8,10 +8,10 @@ namespace EventBusRabbitMQ1.Test
 {
     public class DefaultRabbitMQPersistentConnectionTest
     {
-        private Mock<IRabbitMQPersistentConnection> _mockPerConncection;
-        private DefaultRabbitMQPersistentConnection _defaultRabbitMQPersistentConnection;
+        private readonly Mock<IRabbitMQPersistentConnection> _mockPerConncection;
+        private  DefaultRabbitMQPersistentConnection _defaultRabbitMQPersistentConnection;
         private readonly Mock<ILogger<DefaultRabbitMQPersistentConnection>> _mockLogger;
-        private Mock<IConnectionFactory> _mockIConnectionFactory;
+        private readonly Mock<IConnectionFactory> _mockIConnectionFactory;
 
         public DefaultRabbitMQPersistentConnectionTest()
         {

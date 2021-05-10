@@ -1,0 +1,24 @@
+﻿[
+  {
+    "Id": 1,
+    "AuctionId": "1",
+    "ProductId": "25",
+    "SellerUserName": "erdem@test.com",
+    "UnitPrice": 1000
+  },
+  {
+    "Id": 2,
+    "AuctionId": "2",
+    "ProductId": "15",
+    "SellerUserName": "test@test.com",
+    "UnitPrice": 2000
+  },
+  {
+    "Id": 3,
+    "AuctionId": "3",
+    "ProductId": "25",
+    "SellerUserName": "test@test.com",
+    "UnitPrice": 3000
+
+  }
+]

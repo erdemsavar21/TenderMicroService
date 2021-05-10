@@ -10,7 +10,7 @@ namespace Ordering.Domain.Entities.Base
     public abstract class Entity : IEntityBase
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public virtual int Id { get; protected set; }
+        public int Id { get;  set; }
 
         public Entity Clone()
         {
