@@ -55,6 +55,10 @@ namespace Tender.Products.Controllers
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.Created)]
         public async Task<ActionResult<Product>> CreateProduct([FromBody] Product product)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             await _productRepository.Create(product);
             return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
         }
@@ -63,6 +67,10 @@ namespace Tender.Products.Controllers
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> UpdateProduct([FromBody] Product product)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             return Ok(await _productRepository.Update(product));
         }
 
@@ -71,6 +79,10 @@ namespace Tender.Products.Controllers
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> DeleteProductById(string id)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             return Ok(await _productRepository.Delete(id));
         }
 
